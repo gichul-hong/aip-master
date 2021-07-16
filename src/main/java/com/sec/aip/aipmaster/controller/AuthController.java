@@ -31,7 +31,7 @@ public class AuthController {
         
         String authToken = authService.getAuthToken();
         
-        return new ResponseEntity<DefaultResponse<String>>(DefaultResponse.of(AipResponseStatus.OK, null, new String(authToken)), HttpStatus.OK);
+        return new ResponseEntity<DefaultResponse<String>>(DefaultResponse.of(AipResponseStatus.OK, new String(authToken)), HttpStatus.OK);
         
     }
     
@@ -39,7 +39,7 @@ public class AuthController {
     @ResponseStatus(code = HttpStatus.CREATED)
     public ResponseEntity<DefaultResponse<AipUser>> getUserInfo(@PathVariable(name = "userId") String userId) {
  
-        return new ResponseEntity<DefaultResponse<AipUser>>(DefaultResponse.of(AipResponseStatus.NOT_FOUND, "message", authService.getUserInfo()), HttpStatus.OK);
+        return new ResponseEntity<DefaultResponse<AipUser>>(DefaultResponse.of(AipResponseStatus.NOT_FOUND, authService.getUserInfo()), HttpStatus.OK);
         
     }
     

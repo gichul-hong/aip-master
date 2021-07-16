@@ -22,11 +22,11 @@ public class DefaultResponse<T> {
         this.data = null;
     }
 
-    public static<T> DefaultResponse<T> of(final AipResponseStatus status, final String responseMessage) {
-        return of(status, responseMessage, null);
+    public static<T> DefaultResponse<T> of(final AipResponseStatus status) {
+        return of(status, null);
     }
 
-    public static<T> DefaultResponse<T> of(final AipResponseStatus status, final String responseMessage, final T t) {
+    public static<T> DefaultResponse<T> of(final AipResponseStatus status, final T t) {
         return DefaultResponse.<T>builder()
                 .data(t)
                 .responseCode(status.getStatusCode())

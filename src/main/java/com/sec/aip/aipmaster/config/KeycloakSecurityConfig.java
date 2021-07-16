@@ -32,6 +32,7 @@ public class KeycloakSecurityConfig extends KeycloakWebSecurityConfigurerAdapter
 
         http
         .authorizeRequests()
+        .antMatchers("/h2/**").permitAll()
         .antMatchers("/test/permitAll").permitAll()
         .antMatchers("test/authenticated").authenticated()
         .antMatchers("/test/user").hasAnyRole("USER")
@@ -39,6 +40,8 @@ public class KeycloakSecurityConfig extends KeycloakWebSecurityConfigurerAdapter
         .anyRequest()
         .permitAll();
 
+        http.headers().frameOptions().disable();
+        
         http.csrf().disable();
     }
 

@@ -21,6 +21,6 @@ public class AipExceptionHandler {
         message.setMessage(ex.getError().getMessage());
         message.setData(null);
         
-        return new ResponseEntity<DefaultResponse<?>>(DefaultResponse.of(AipResponseStatus.BAD_REQUEST, ex.getMessage()), HttpStatus.OK);
+        return new ResponseEntity<DefaultResponse<?>>(DefaultResponse.of(AipResponseStatus.BAD_REQUEST, message), HttpStatus.OK);
     }
 }

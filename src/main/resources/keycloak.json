@@ -6,10 +6,5 @@
 "credentials": {
 "secret": "38d02f4b-d1ac-41e1-9fce-46a5e3c438fa"
 },
-"confidential-port": 0,
-"authorization-uri": "${auth-server-url}/realms/education/protocol/openid-connect/auth",
-"user-info-uri": "${auth-server-url}/realms/education/protocol/openid-connect/userinfo",
-"token-uri": "${auth-server-url}/realms/education/protocol/openid-connect/token",
-"logout": "${auth-server-url}/realms/education/protocol/openid-connect/logout",
-"jwk-set-uri": "${auth-server-url}/realms/education/protocol/openid-connect/certs"
+"confidential-port": 0
 }

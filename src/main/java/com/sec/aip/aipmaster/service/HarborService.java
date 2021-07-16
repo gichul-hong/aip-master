@@ -1,23 +1,47 @@
 package com.sec.aip.aipmaster.service;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import org.springframework.stereotype.Service;
 
 import com.sec.aip.aipmaster.common.dto.harbor.HarborProject;
 import com.sec.aip.aipmaster.common.dto.harbor.HarborProjectMember;
 
-public interface HarborService {
+@Service
+public class HarborService {
 
-    public List<HarborProject> getProjectLists();
+    public boolean canCreatePrivateRepo(String projectName) {
+        
+        return true;
+    }
+
+    public List<HarborProject> getProjectLists() {
+        
+        return new ArrayList<>();
+    }
     
-    public void createProject(String projectName);
+    public void createProject(String projectName) {
+        
+    }
     
-    public HarborProject getProject(int projectId);
+    public HarborProject getProject(int projectId) {
+        
+        return new HarborProject();
+    }
     
-    public HarborProject getProjectByName(String projectName);
+    public HarborProject getProjectByName(String projectName) {
+        
+        return new HarborProject();
+    }
     
-    public HarborProjectMember getHarborProjectMembers(int projectId);
+    public List<HarborProjectMember> getHarborProjectMembers(int projectId) {
+        
+        return new ArrayList<>();
+    }
     
-    public int createMember(String userName);
-    
-    public void addProjectMember(int projectId, int memberId);
+//    public int createMember(String userName);
+//    
+//    public void addProjectMember(int projectId, int memberId);
+
 }

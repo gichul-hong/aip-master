@@ -28,7 +28,7 @@ public class HarborController {
     @GetMapping(path = "/projects/{projectId}")
     public ResponseEntity<DefaultResponse<HarborProject>> getProjectInfo(@PathVariable(name = "projectId") int projectId) {
  
-        return new ResponseEntity<DefaultResponse<HarborProject>>(DefaultResponse.of(AipResponseStatus.OK, null, harborService.getProject(projectId)), HttpStatus.OK);
+        return new ResponseEntity<DefaultResponse<HarborProject>>(DefaultResponse.of(AipResponseStatus.OK, harborService.getProject(projectId)), HttpStatus.OK);
         
     }
     

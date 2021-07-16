@@ -1,23 +1,38 @@
 
 package com.sec.aip.aipmaster.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
 import com.sec.aip.aipmaster.common.dto.s3.Bucket;
-import com.sec.aip.aipmaster.common.dto.s3.BucketAcl;
 
 @Service
-public interface S3Service {
+public class S3Service {
 
-    public List<Bucket> getBucketList();
+    public boolean canCreateBucket(String projectName) {
+        
+        return true;
+    }
+
+    public List<Bucket> getBucketList() {
+        
+        return new ArrayList<>();
+    }
     
-    public Bucket getBucket(String bucketId);
+    public Bucket getBucket(String bucketId) {
+        
+        return new Bucket();
+    }
     
-    public void createBucket(Bucket bucket);
+    public Bucket createBucket(String bucketId) {
+        
+        return new Bucket();
+    }
     
-    public BucketAcl getBucketAcl(String bucketId);
-    
-    public void applyBucketAcls(BucketAcl acl);
+//    public BucketAcl getBucketAcl(String bucketId);
+//    
+//    public void applyBucketAcls(BucketAcl acl);
+
 }
