@@ -23,4 +23,16 @@ public class AipExceptionHandler {
         
         return new ResponseEntity<DefaultResponse<?>>(DefaultResponse.of(AipResponseStatus.BAD_REQUEST, message), HttpStatus.OK);
     }
+    
+    @ExceptionHandler(value = Exception.class)
+//  @ResponseStatus(value = HttpStatus.BAD_REQUEST)
+    public ResponseEntity<DefaultResponse<?>> handleException(Exception ex) {
+      
+      Message message = new Message();
+      message.setCode(null);
+      message.setMessage(ex.getMessage());
+      message.setData(null);
+      
+      return new ResponseEntity<DefaultResponse<?>>(DefaultResponse.of(AipResponseStatus.INTERNAL_SERER_ERROR, message), HttpStatus.OK);
+  }
 }

@@ -16,8 +16,8 @@ public class AuthService {
     }
     
     public AipUser getUserInfo() {
-//        return new AipUser("id", "password", "name");
-        throw new AipException(AipErrorCode.USER_NOT_FOUND);
+        return new AipUser("id", "password", "name");
+//        throw new AipException(AipErrorCode.USER_NOT_FOUND);
     }
 
     

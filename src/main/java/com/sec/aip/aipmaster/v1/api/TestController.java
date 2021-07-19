@@ -1,4 +1,4 @@
-package com.sec.aip.aipmaster.controller;
+package com.sec.aip.aipmaster.v1.api;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

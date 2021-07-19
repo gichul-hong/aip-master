@@ -6,6 +6,7 @@ import lombok.Getter;
 public enum AipErrorCode {
 
     USER_NOT_FOUND("C0001", "User not found."),
+    DATA_NOT_FOUND("C0002", "Data not found"),
     
     PROJECT_NAME_EXISTS("S0001", "Project Already Exists"),
     GITHUB_ERROR("S0002", "Github error, change me"),

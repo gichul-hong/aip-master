@@ -1,4 +1,4 @@
-package com.sec.aip.aipmaster.controller;
+package com.sec.aip.aipmaster.v1.api;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -39,7 +39,7 @@ public class AuthController {
     @ResponseStatus(code = HttpStatus.CREATED)
     public ResponseEntity<DefaultResponse<AipUser>> getUserInfo(@PathVariable(name = "userId") String userId) {
  
-        return new ResponseEntity<DefaultResponse<AipUser>>(DefaultResponse.of(AipResponseStatus.NOT_FOUND, authService.getUserInfo()), HttpStatus.OK);
+        return new ResponseEntity<DefaultResponse<AipUser>>(DefaultResponse.of(AipResponseStatus.OK, authService.getUserInfo()), HttpStatus.OK);
         
     }
     

@@ -1,4 +1,5 @@
 server:
+
   port: 8000
   
 logging:
@@ -7,6 +8,9 @@ logging:
     com.sec.aip.aipmaster: debug
     
 spring:
+  devtools:
+    livereload:
+      enabled: true
   datasource:
     driver-class-name: org.h2.Driver
     url: jdbc:h2:~/test

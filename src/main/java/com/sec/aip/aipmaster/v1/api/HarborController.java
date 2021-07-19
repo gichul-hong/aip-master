@@ -1,4 +1,4 @@
-package com.sec.aip.aipmaster.controller;
+package com.sec.aip.aipmaster.v1.api;
 
 import javax.annotation.security.RolesAllowed;
 
