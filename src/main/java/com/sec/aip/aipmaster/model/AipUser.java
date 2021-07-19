@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -25,10 +26,12 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class AipUser {
 
-    private String userId;
+	@Id
+	private String userId;
     private String password;
     private String email;
     
+    @JsonIgnore
     @OneToMany(mappedBy = "user")
     private List<ProjectUser> projectUser = new ArrayList<>();
 }

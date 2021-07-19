@@ -34,5 +34,5 @@ public class AipExceptionHandler {
       message.setData(null);
       
       return new ResponseEntity<DefaultResponse<?>>(DefaultResponse.of(AipResponseStatus.INTERNAL_SERER_ERROR, message), HttpStatus.OK);
-  }
+    }
 }

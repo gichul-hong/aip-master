@@ -2,9 +2,9 @@
 "realm": "aip",
 "auth-server-url": "http://localhost:8080//auth",
 "ssl-required": "external",
-"resource": "aip-client",
+"resource": "aip-master",
 "credentials": {
-"secret": "38d02f4b-d1ac-41e1-9fce-46a5e3c438fa"
+"secret": "bf56a959-5d5e-457d-a781-8ffcd6cd159e"
 },
 "confidential-port": 0
 }

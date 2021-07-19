@@ -24,6 +24,8 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "project")
 @EnableJpaRepositories
+@NoArgsConstructor
+@AllArgsConstructor
 public class AipProject {
 
     @Id

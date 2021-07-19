@@ -1,5 +1,7 @@
 package com.sec.aip.aipmaster.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.sec.aip.aipmaster.common.exception.AipErrorCode;
@@ -22,26 +24,24 @@ public class SetupService {
     
     public boolean canCreateProject(String projectName) {
 
-    	boolean test = true;
-    	
-    	if (test) {
+    	if (projectRepository.findByProjectName(projectName).isPresent()) {
+    		
     		throw new AipException(AipErrorCode.PROJECT_NAME_EXISTS);
     	}
-    	
-        if (projectRepository.findByProjectName(projectName).isPresent()) {
-            throw new AipException(AipErrorCode.PROJECT_NAME_EXISTS);
-        }
         
         if (!githubService.canCreateOrgAndRepo(projectName)) {
-            throw new AipException(AipErrorCode.GITHUB_ERROR);
+            
+        	throw new AipException(AipErrorCode.GITHUB_ERROR);
         }
         
         if (!s3Service.canCreateBucket(projectName)) {
-            throw new AipException(AipErrorCode.S3_ERROR);
+            
+        	throw new AipException(AipErrorCode.S3_ERROR);
         }
         
         if (!harborService.canCreatePrivateRepo(projectName)) {
-            throw new AipException(AipErrorCode.HARBOR_ERROR);
+            
+        	throw new AipException(AipErrorCode.HARBOR_ERROR);
         }
         
         return true;
@@ -64,10 +64,10 @@ public class SetupService {
     }
 
     public AipProject getProjectByProjectId(int projectId) {
-    	
+
     	return projectRepository.findById(projectId)
-                .orElseThrow(() -> new AipException(AipErrorCode.DATA_NOT_FOUND));
-    }
+    			.orElseThrow(() -> new AipException(AipErrorCode.DATA_NOT_FOUND));
+    }    	
     
 	public AipProject getProjectByProjectName(String projectName) {
 
@@ -94,5 +94,10 @@ public class SetupService {
 		// TODO
 		// DB에서 삭, git 등에 멤버 추가, 멤버를 list 로 받는 것도 고려해야 
 
+	}
+
+	public List<AipProject> getProjectList() {
+		
+		return projectRepository.findAll();
 	}
 }
