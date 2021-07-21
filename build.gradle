@@ -22,6 +22,7 @@ dependencies {
     implementation group: 'org.keycloak', name: 'keycloak-spring-security-adapter', version: '14.0.0'
     implementation group: 'org.keycloak', name: 'keycloak-admin-client', version: '14.0.0'
     
+    compileOnly group: 'org.keycloak', name: 'keycloak-services', version: '14.0.0'
     compileOnly 'org.projectlombok:lombok'
     compileOnly group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
     compileOnly group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
