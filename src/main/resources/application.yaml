@@ -3,7 +3,7 @@ server:
   
 logging:
   level:
-    root: debug
+    root: info
     com.sec.aip.aipmaster: debug
     
 spring:
@@ -24,3 +24,7 @@ spring:
     console:
       enabled: true
       path: /h2
+      
+keycloak:
+  realmname: aip
+  clientname: aip-master
