@@ -2,9 +2,7 @@ package com.sec.aip.aipmaster.service;
 
 import java.util.List;
 
-import org.keycloak.admin.client.Keycloak;
 import org.keycloak.admin.client.resource.ClientsResource;
-import org.keycloak.admin.client.resource.GroupResource;
 import org.keycloak.admin.client.resource.GroupsResource;
 import org.keycloak.admin.client.resource.RealmResource;
 import org.keycloak.admin.client.resource.RolesResource;
@@ -14,34 +12,19 @@ import org.keycloak.representations.idm.ClientRepresentation;
 import org.keycloak.representations.idm.GroupRepresentation;
 import org.keycloak.representations.idm.RoleRepresentation;
 import org.keycloak.representations.idm.UserRepresentation;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 @Service
 @Slf4j
-@NoArgsConstructor
+@RequiredArgsConstructor
 public class KeycloakAdminService {
 
-	@Value("${keycloak.realmname}")
-	static String aipRealmName;
-	
-	@Value("${keycloak.clientname}")
-	static String aipClientId;
+//	private Keycloak keycloakClient;
+	final private RealmResource aipRealm;
 
-	private Keycloak keycloakClient;
-	private RealmResource aipRealm;
-
-	@Autowired
-	public KeycloakAdminService(Keycloak keycloakClient) {
-		
-		this.keycloakClient = keycloakClient;
-		aipRealm = this.keycloakClient.realm("aip");
-	}
-	
 	/**
 	 * create project default groups in {realm} 
      *   - aip/project/{projectName}
