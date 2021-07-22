@@ -25,7 +25,7 @@ public class KeycloakConfig {
 				.grantType(OAuth2Constants.PASSWORD)
 				.realm(aipRealmName)
 				.clientId(aipClientId)
-//				.clientSecret("bf56a959-5d5e-457d-a781-8ffcd6cd159e")
+				.clientSecret("bf56a959-5d5e-457d-a781-8ffcd6cd159e")
 //				.username("gichul.hong")
 				.username("aip-admin")
 				.password("1234")
