@@ -24,7 +24,3 @@ spring:
     console:
       enabled: true
       path: /h2
-      
-keycloak:
-  realmname: aip
-  clientname: aip-master

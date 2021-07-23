@@ -17,13 +17,13 @@ import lombok.Setter;
 public class KeycloakJsonProperties {
     
     @JsonProperty("auth-server-url")
-    private String serverUrl;
+    private String authServerUrl;
     
     @JsonProperty("realm")
     private String realm;
     
-    @JsonProperty("resourxe")
-    private String clientName;
+    @JsonProperty("resource")
+    private String resource;
     
     @JsonProperty("secret")
     private String secret;

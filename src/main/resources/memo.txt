@@ -1,1 +1,3 @@
 https://stackoverflow.com/questions/56407763/keycloak-admin-client
+
+https://github.com/keycloak/keycloak/blob/master/testsuite/integration-arquillian/tests/base/src/test/java/org/keycloak/testsuite/admin/group/GroupTest.java

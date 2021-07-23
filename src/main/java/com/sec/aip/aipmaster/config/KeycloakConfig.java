@@ -20,25 +20,39 @@ public class KeycloakConfig {
 	@Bean
 	public Keycloak aipKeycloakClient() {
 		
+//		Keycloak keycloakClient = KeycloakBuilder.builder()
+//				.serverUrl(properties.getAuthServerUrl())
+//				.grantType(OAuth2Constants.PASSWORD)
+//				.realm(properties.getRealm())
+//				.clientId(properties.getResource())
+//				.clientSecret(properties.getSecret())
+//				.username("aip-admin")
+//				.password("1234")
+//				.resteasyClient(
+//						new ResteasyClientBuilder()
+//						.connectionPoolSize(10).build()
+//						).build();
+		
 		Keycloak keycloakClient = KeycloakBuilder.builder()
-				.serverUrl(properties.getServerUrl())
+				.serverUrl("http://localhost:8080//auth")
 				.grantType(OAuth2Constants.PASSWORD)
-				.realm(properties.getRealm())
-				.clientId(properties.getClientName())
-				.clientSecret(properties.getSecret())
+				.realm("aip")
+				.clientId("aip-master")
+				.clientSecret("bf56a959-5d5e-457d-a781-8ffcd6cd159e")
 				.username("aip-admin")
 				.password("1234")
 				.resteasyClient(
 						new ResteasyClientBuilder()
 						.connectionPoolSize(10).build()
 						).build();
-		
+
+
 		return keycloakClient;
 	}
 	
 	@Bean
 	public RealmResource aipRealm(Keycloak aipKeycloakClient) {
 		
-		return aipKeycloakClient.realm(properties.getRealm());
+		return aipKeycloakClient.realm("aip");
 	}
 }

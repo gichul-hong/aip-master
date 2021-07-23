@@ -21,6 +21,7 @@ public class SetupService {
     final private S3Service s3Service;
     final private HarborService harborService;
     final private AuthService authService;
+    final private KeycloakAdminService keycloakAdminService;
     
     public boolean canCreateProject(String projectName) {
 
@@ -59,6 +60,8 @@ public class SetupService {
         githubService.createOrgAndRepo(projectName, projectAdminId);
         
         s3Service.createBucket(projectName);
+        
+//        keycloakAdminService.initializeGroupAndRole(projectName, projectAdminId);
         
         
     }
